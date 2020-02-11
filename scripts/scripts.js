@@ -8,16 +8,18 @@ const getChuckButton = document.querySelector(`#getNorris`);
 const submitFormButton = document.querySelector(`#submitForm`)
 const chuckSaysParagraph = document.querySelector(`#chuckSays`);
 const categoryChangeForm = document.querySelector(`#categoryChangeForm`)
-
+const closeModalButton = document.querySelector('#closeModal');
 const getNorris = function(category) {
     const apiUrl = `https://api.chucknorris.io/jokes/random?category=${category}`;
+    const modalWindow = document.querySelector('.modal-overlay');
     
     
     get(apiUrl)
     .then(function(response) {
         chuckSaysParagraph.innerHTML = response.value;
+        modalWindow.classList.toggle('open');
     })
-
+    
 };
 
 function getCategories() {
@@ -62,7 +64,11 @@ getChuckButton.addEventListener('click',function(e) {
     })
 
 
+closeModalButton.addEventListener('click', function(e) {
 
+    const modalWindow = document.querySelector('.modal-overlay');
+    modalWindow.classList.toggle('open');
+})
 
 getNorris(category);
 getCategories();

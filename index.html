@@ -18,7 +18,7 @@
         <img src="assets/chuck.jpeg">
         </header>
         <div class="chuckSays">
-            <p id="chuckSays"></p>
+            
         </div>
 
         <form id="categoryChangeForm">
@@ -29,7 +29,13 @@
         <button type="button" id="getNorris">Refresh Quote</button>
     </div>
 
-  <div class="modal-overlay"></div>
+  <div class="modal-overlay">
+      
+      <div class="modal-content">
+        <span id="closeModal" class="modal-close">X</span>
+        <p id="chuckSays"></p>
+      </div>
+  </div>
 </body>
     <script src="scripts/get.js"></script>
     <script src="scripts/scripts.js"></script>

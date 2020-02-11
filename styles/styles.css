@@ -63,15 +63,52 @@ input {
 
 .modal-overlay {
 
-	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.5);
+	display: none;
 	position: absolute;
 	top:0;
 	bottom:0;
 	right:0;
 	left:0;
 	z-index: 9999;
+	overflow: hidden;
+	width:100vw;
+	height:100vh;
+
+}
+.modal-overlay.open {
+
+	display: flex;
 }
 
+.modal-content {
+	background-color: #fff;
+	margin:auto;
+	width: 640px;
+	height: auto;
+	padding: 16px;
+	position: relative;
+	border-radius: 4px;
+}
+
+.modal-content p {
+
+	font-size:2rem;
+}
+
+.modal-content .modal-close {
+
+	position:absolute;
+	top: 16px;
+	right: 16px;
+	height: 24px;
+	width: 24px;
+	border-radius: 50%;
+	background-color: #000;
+	color:#fff;
+	cursor: pointer;
+
+}
 
 
 @media(max-width: 768px){
