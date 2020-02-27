@@ -20,12 +20,12 @@ const getQuote = async category => {
     modalWindow.classList.toggle('open');
 }
 
-function getCategories() {
+const  getCategories = async () => {
     const apiUrl = `https://api.chucknorris.io/jokes/categories`;
     const categorySelectLabel = document.querySelector('#categorySelectLabel');
-    getWithAwait(apiUrl).then(function(response) {
+    const categoryList = await getWithAwait(apiUrl)
         
-    const categoryList = response.filter(function(category) {
+    categoryList.filter(category =>  {
         if (category != 'explicit') {
             return category
         }
@@ -43,8 +43,9 @@ function getCategories() {
         
     })
     categorySelectLabel.appendChild(categoryElement);
-    })
+    
 }
+
 
 
 
