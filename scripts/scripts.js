@@ -3,7 +3,7 @@
 let category = `dev`;
 
 
-//iife (immediately invoked function expression)
+
 const getChuckButton = document.querySelector(`#getNorris`);
 const submitFormButton = document.querySelector(`#submitForm`)
 const chuckSaysParagraph = document.querySelector(`#chuckSays`);
@@ -24,6 +24,7 @@ const getNorris = function(category) {
 
 function getCategories() {
     const apiUrl = `https://api.chucknorris.io/jokes/categories`;
+    const categorySelectLabel = document.querySelector('#categorySelectLabel');
     get(apiUrl).then(function(response) {
         
     const categoryList = response.filter(function(category) {
@@ -43,7 +44,7 @@ function getCategories() {
         categoryElement.appendChild(categoryOption)
         
     })
-    document.body.appendChild(categoryElement);
+    categorySelectLabel.appendChild(categoryElement);
     })
 }
 
